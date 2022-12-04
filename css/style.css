@@ -1,0 +1,664 @@
+@font-face {
+    font-family: 'Neue Machine';
+    src: url(../font/NeueMachina-Light.woff);
+    src: url(../font/NeueMachina-Ultrabold.woff);
+    src: url(../font/NeueMachina-Regular.woff);
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    color: #252525;
+}
+.body_active{
+    overflow: hidden;
+}
+.navigation{
+    width: 100%;
+    height: 65px;
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    align-items: center;
+    border-top: 1px solid #252525;
+    border-bottom: 1px solid #252525;
+    background-color: rgba(255,255,255, 0.05);
+}
+.logo{
+    font-family: 'Neue Machine';
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    padding-left: 2.5%;
+}
+.burger{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    display: none;
+}
+.burger_menu{
+    position: fixed;
+    z-index: -1;
+    width: 100vh;
+    height: 100vh;
+    transition: 0.7s ease-in;
+    background-color: transparent;
+}
+.burger_menu_active{
+    z-index: 1;
+    transition: 0.7s ease-out;
+    background-color: rgb(255, 255, 255);
+}
+.line{
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #252525;
+    transition: 0.3s cubic-bezier(.3,.47,.82,.99);
+}
+.line_active_1{
+    transform: rotate(45deg) translate(13px, 13px);
+}
+.line_active_2{
+    transform: rotate(-45deg) translate(13px, -13px);
+}
+.line:last-child{
+    bottom: 0;
+}
+nav{
+    flex-grow: 1;
+}
+ul.menu{
+    display: flex;
+    justify-content: flex-end;
+}
+ul.menu li{
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.05em;
+    padding: 0 3%;
+    cursor: pointer;
+    display: inline-flex;
+    text-decoration: underline solid transparent;
+    transition: 1s;
+}
+ul.menu li:hover{
+    text-decoration: underline solid #252525;
+}
+.main_screen{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    box-sizing: border-box;
+    background: url(../img/main_screen-background.webp) center center no-repeat;
+    border-bottom: 1px solid #252525;
+}
+div.tagline{
+    padding-top: 150px;
+    width: 100%;
+}
+div.tagline h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 150px;
+    line-height: 183px;
+    letter-spacing: -0.05em;
+    padding: 0 5%;
+    transition: 2s ease-out;
+    cursor: pointer;
+}
+div.tagline:hover h2{
+    padding: 0;
+    margin-left: 10%;
+}
+div.tagline:hover h2:last-child{
+    padding: 0;
+    margin-right: 10%;
+}
+div.tagline h2:last-child{
+    text-align: right;
+}
+a{
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    margin-left: 5%;
+    transition: 1s;
+}
+.delete_margin{
+    margin: 0;
+}
+.delete_padding{
+    padding: 0;
+}
+ul li:last-child{
+    padding: 0;
+    margin-right: 10px;
+}
+a h3{
+    font-family: 'Neue Machina';
+    text-transform: uppercase;
+    text-decoration: underline dashed #252525;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    transition: 0.5s;
+}
+a.join:hover{
+    border: 2px solid #252525;
+}
+a.join:hover h3{
+    text-decoration: underline dashed transparent;
+}
+section.news{
+    padding-top: 80px;
+    background: url(../img/news_bg1.webp) no-repeat, url(../img/news_bg2.webp) no-repeat bottom right;
+}
+section .header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.header .spine{
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+}
+section h2.label{
+    font-family: 'Neue Machina';
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 120px;
+    letter-spacing: -0.05em;
+    border-left: 1px solid black;
+}
+.news_content{
+    margin: 0 auto;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 75%;
+    height: 120vh;
+}
+.news_content article{
+    min-width: 400px;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.projects article{
+    margin-top: 130px;
+    min-width: 460px;
+    max-width: 602px;
+    display: flex;
+    flex-direction: column;
+}
+article .wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid #252525;
+}
+article .wrapper .container{
+    display: flex;
+    flex-grow: 1;
+    padding-left: 5%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.python{
+    max-width: 121px;
+    max-height: 121px;
+}
+.js{
+    max-width: 120px;
+    max-height: 120px;
+}
+.ruby{
+    max-width: 115px;
+    max-height: 115px;
+}
+.news_content article .wrapper .container h3{
+    text-align: left;
+    align-self: flex-start;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 55px; 
+    letter-spacing: -0.12em;
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: 1s;
+    cursor: pointer;
+}
+.news_content article .wrapper .container h3:hover{
+    border: 1px solid #252525;
+}
+.news_content article .wrapper .container h4{
+    font-family: 'Neue Machina';
+    text-align: right;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.05em;
+    cursor: pointer;
+    text-decoration: underline dashed transparent;
+    transition: 1s;
+    text-align: justify;
+}
+.news_content article .wrapper .container h4:hover{
+    text-decoration: underline dashed #252525;
+}
+
+.news_content_info{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+}
+.right{
+    align-self: flex-end;
+}
+section.projects{
+    background: url(../img/project_bg1.webp) no-repeat, url(../img/project_bg2.webp) no-repeat right, url(../img/project_bg3.webp) no-repeat left bottom;
+    padding-top: 80px;
+    margin-top: 70px;
+}
+div.header.projects{
+    margin-left: -40px;
+}
+.spine_news{
+    transform: rotate(270deg) translateX(-25px) translateY(20px);
+}
+.spine_projects{
+    transform: rotate(270deg) translateX(-40px) translateY(40px);
+}
+.spine_faq{
+    transform: rotate(270deg) translateX(-15px) translateY(10px);
+}
+.spine_about{
+    transform: rotate(270deg) translateX(-25px) translateY(25px);
+}
+p.project_description{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    min-width: 300px;
+    max-width: 65%;
+    margin-top: 50px;
+    padding-left: 90px;
+}
+.projects article .wrapper{
+    justify-content: space-between;
+    margin: 0;
+    border: 0;
+}
+.projects article h4{
+    display: inline-block;
+    margin-top: 20px;
+    font-family: 'Neue Machina';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.05em;
+    border-bottom: 2px solid #252525;
+    text-decoration: underline dashed transparent;
+    transition: 1s;
+}
+.projects article h4:hover{
+    text-decoration: underline dashed #252525;
+}
+div.project1_desription{
+    width: 296px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid #252525;
+}
+div.project1_desription h3{
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.05em;
+}
+article p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+}
+div.project_content{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+}
+.project_1{
+    width: 296px; 
+}
+.project_2{
+    width: 602px;
+}
+div.project1_desription:hover{
+    background: #252525;
+    color: white;
+}
+section.faq{
+    margin-top: 70px;
+    padding-top: 80px;
+    background: url(../img/faq_bg-1.webp) no-repeat right;
+    padding-bottom: 60px;
+}
+div.faq{
+    margin-left: 20px;
+}
+.questions{
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 90%;
+}
+.questions h3:nth-child(n){
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: -0.05em;
+    padding: 30px 40px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 2px solid #252525;
+    transition: 1s;
+    cursor: pointer;
+}
+.questions h3:nth-child(n):hover{
+    color: white;
+    background-color: #252525;
+}
+div.about{
+    margin-left: -8px;
+}
+section.about{
+    padding-top: 80px;
+}
+.menu_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100vw);
+    color: transparent;
+    transition: 1s;
+    width: 100vw;
+    height: 100vh;
+}
+.menu_section li {
+    font-family: 'Neue Machina';
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 80px;
+    letter-spacing: -0.05em;
+}
+.menu_section_active{
+    transform: translateX(0);
+    color: #252525;
+    transition: 1s ease-in;
+}
+.about_content{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about_content .wrapper{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.about_content .wrapper:last-child{
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    align-items: flex-start;
+}
+.wrapper p.about{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.05em;
+    flex-grow: 1;
+    min-width: 35%;
+    max-width: 50%;
+}
+.wrapper .join{
+    margin: 0;
+}
+.about_img{
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 2px solid #252525;
+}
+.about_header{
+    flex-grow: 1;
+    font-family: 'Aileron';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 108px;
+    text-align: center;
+    letter-spacing: -0.05em;
+}
+footer{
+    margin-top: 50px;
+    border-top: 1px solid #252525;
+}
+.icon{
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 8px;
+    border: 1px solid #252525;
+}
+.icons{
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 320px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+div.author{
+    margin-top: 20px;
+    font-family: 'Neue Machina';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.05em;
+}
+@media (max-width: 768px){
+    div.tagline h2{
+        font-size: 100px;
+        line-height: 130px;
+    }
+    a h3, .questions h3:nth-child(n){
+        font-size: 25px;
+        line-height: 24px;
+    }
+    .questions h3:nth-child(n){
+        padding: 20px 30px;
+    }
+    section h2.label{
+        font-size: 100px;
+        line-height: 100px;
+    }
+    .news_content{
+        align-items: center;
+    }
+    .right{
+        align-self: auto;
+    }
+    .python{
+        max-width: 97px;
+        max-height: 97px;
+    }
+    .js{
+        max-width: 96px;
+        max-height: 96px;
+    }
+    .ruby{
+        max-width: 92px;
+        max-height: 92px;
+    }
+    .news_content article .wrapper .container h3, div.project1_desription h3{
+        font-size: 27.5px;
+        line-height: 35px;
+    }
+    div.project1_desription h3{
+        padding: 0;
+        margin-left: 15px;
+    }
+    .news_content_info, .news_content article .wrapper .container h4, p.project_description, .projects article h4, article p, .wrapper p.about{
+        font-size: 15px;
+    }
+    div.project_content {
+        align-items: center;
+    }
+    .project_1, div.project1_desription{
+        max-width: 237px;
+        max-height: 271px;
+    }
+    p.project1_desription {
+        max-width: 75%;
+    }
+    .projects article{
+        width: 477px;
+    }
+    ul.menu a:nth-child(n){
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+    .wrapper p.about{
+        margin: auto;
+        max-width: 80%;
+    }
+    .about_header{
+        font-size: 50px;
+        line-height: 70px;
+    }
+}
+@media (max-width: 480px){
+    div.tagline h2{
+        font-size: 70px;
+        line-height: 100px;
+    }
+    a h3, .news_content article .wrapper .container h3, div.project1_desription h3, .questions h3:nth-child(n){
+        font-size: 20px;
+        line-height: 18px;
+    }
+    section h2.label{
+        font-size: 75px;
+        line-height: 75px;
+    }
+    .projects h2.label{
+        line-height: 110px;
+    }
+    .about_header{
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .wrapper p.about, .news_content_info, p.project_description, article p{
+        font-size: 12px;
+        line-height: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .python{
+        max-width: 68px;
+        max-height: 68px;
+    }
+    .js{
+        max-width: 67px;
+        max-height: 67px;
+    }
+    .ruby{
+        max-width: 64px;
+        max-height: 64px;
+    }
+    .news_content article {
+        min-width: 310px;
+    }
+    .news_content{
+        height: 100vh;
+    }
+    .news_content article .wrapper .container h4, .projects article h4{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .project_1, div.project1_desription{
+        max-width: 154px;
+        max-height: 177px;
+    }
+    div.project1_desription h3{
+        margin-top: 32px;
+    }
+    .projects article {
+        width: 310px
+    }
+    .projects article{
+        min-width: 310px;
+    }
+    .questions h3:nth-child(n) {
+        padding: 15px 25px;
+    }
+    section.faq{
+        padding-bottom: 130px;
+    }
+    div.author{
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
