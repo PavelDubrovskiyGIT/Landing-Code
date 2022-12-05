@@ -1,2 +1,2 @@
 # Landing-Code
- - LANDING (https://paveldubrovskiygit.github.io/Landing-Code/)
+ - LANDING (https://fireeflyx.github.io/Landing-Code/)
