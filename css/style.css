@@ -376,6 +376,7 @@ div.project_content{
 div.project1_desription:hover{
     background: #252525;
     color: white;
+    transition: 1s;
 }
 section.faq{
     margin-top: 70px;
